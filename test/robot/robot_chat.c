@@ -200,7 +200,12 @@ void run_robot() {
         sprintf(tmp, "%d", i);
         strcat(str, tmp); 
         msg_send(str, channel, user, "*");
+ #ifndef WIN32
         sleep(1);
+#else
+       Sleep(1);
+#endif
+
     }
     printf("run_robot done\n");
 }
